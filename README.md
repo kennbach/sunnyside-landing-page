@@ -44,6 +44,7 @@ Desktop
 - CSS
 - CSS Variables
 - CSS Grid
+- Vanilla JavaScript
 - Mobile-First workflow
 - Accessibility Aware
 
