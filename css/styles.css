@@ -52,7 +52,8 @@ textarea {
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
 
-  --color-primary-blue: rgb(53, 176, 255);
+  --color-primary-blue: hsl(203, 100%, 60%);
+  --color-primary-lightblue: hsl(203, 100%, 75%);
   --color-primary-dark: hsl(7, 99%, 70%);
   --color-primary-dark--highlight: hsl(7, 99%, 70%, 0.25);
   --color-primary-light: hsl(51, 100%, 49%);
@@ -92,7 +93,6 @@ body {
 header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* justify-content: space-between; */
   align-content: start;
   min-width: 100vw;
   min-height: 540px;
@@ -106,6 +106,7 @@ header {
 
 #header-logo {
   width: max-content;
+  transform: scale(1);
 }
 
 #header-nav__icon {
@@ -199,6 +200,7 @@ main a {
   color: var(--color-secondary-dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  margin: 2em auto 1em auto;
 }
 
 #transform {
@@ -361,12 +363,240 @@ footer svg {
 }
 
 /**************** BEGIN Desktop Styles ****************/
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 640px) {
+  header,
+  main,
+  footer {
+    margin: 0 auto;
+    max-width: var(--width-desktop);
+    min-width: min(var(--width-desktop), 100vw);
+  }
+
+  header {
+    min-height: 800px;
+    padding-top: 35px;
+    background-image: url(../images/desktop/image-header.jpg);
+    background-size: min(var(--width-desktop), 100vw) 800px;
+  }
+
   .desktop-img {
-    display: contents;
+    display: block;
   }
   .mobile-img {
     display: none;
+  }
+
+  #header-logo {
+    transform: scale(1.4);
+    margin: 15px 35px 15px 15px;
+  }
+
+  #header-nav__icon {
+    display: none;
+  }
+  #header-nav {
+    display: contents;
+    z-index: 0;
+    padding: 0;
+  }
+  #header-nav__triangle {
+    display: none;
+  }
+  #header-nav ul {
+    width: max-content;
+    justify-self: end;
+    margin: 15px 0 0 auto;
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-semi-bold);
+    color: var(--color-white);
+  }
+  #header-nav li {
+    display: inline;
+    margin: 0;
+    padding-right: 1.5em;
+  }
+  #header-nav a:hover {
+    color: var(--color-white);
+  }
+  #header-nav li:last-of-type a {
+    padding: 1.1em 2.1em;
+    font-size: 1.5rem;
+    background-color: var(--color-white);
+  }
+  #header-nav li:last-of-type a:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary-lightblue);
+  }
+  header h1 {
+    max-width: 100%;
+    font-size: 5.5rem;
+  }
+  #header-arrow {
+    bottom: 280px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    justify-items: start;
+  }
+  main h2 {
+    font-size: 3.8rem;
+    padding-bottom: 0.9em;
+  }
+  main p {
+    margin: 0;
+    padding-bottom: 2.2em;
+
+    max-width: 45ch;
+  }
+  main a {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2.2em;
+  }
+
+  #transform {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "transform__h2 transform__desktop-img"
+      "transform__p transform__desktop-img"
+      "transform__a transform__desktop-img"
+      ". transform__desktop-img";
+    text-align: left;
+    margin-bottom: 0;
+  }
+  #transform img {
+    grid-area: transform__desktop-img;
+    width: 100%;
+    height: 100%;
+  }
+  #transform h2 {
+    grid-area: transform__h2;
+    margin: 2em 3vw 0 11vw;
+  }
+  #transform p {
+    grid-area: transform__p;
+    margin: 0 3vw 0 11vw;
+  }
+  #transform a {
+    grid-area: transform__a;
+    margin: 0 3vw 0 11vw;
+  }
+  #transform a::after {
+    left: -0.7ch;
+    margin: 0;
+  }
+
+  #stand-out {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "stand-out__desktop-img stand-out__h2"
+      "stand-out__desktop-img stand-out__p"
+      "stand-out__desktop-img stand-out__a "
+      "stand-out__desktop-img .";
+    text-align: left;
+    margin-bottom: 0;
+  }
+  #stand-out img {
+    grid-area: stand-out__desktop-img;
+    width: 100%;
+    height: 100%;
+  }
+  #stand-out h2 {
+    grid-area: stand-out__h2;
+    margin: 2em 3vw 0 11vw;
+  }
+  #stand-out p {
+    grid-area: stand-out__p;
+    margin: 0 3vw 0 11vw;
+  }
+  #stand-out a {
+    grid-area: stand-out__a;
+    margin: 0 3vw 0 11vw;
+  }
+  #stand-out a::after {
+    left: -0.7ch;
+    margin: 0;
+  }
+
+  #graphic-design {
+    width: 100%;
+    background-image: url(../images/desktop/image-graphic-design.jpg);
+  }
+  #graphic-design h2 {
+    font-size: 2.8rem;
+  }
+  #graphic-design p {
+    margin: 0 auto;
+  }
+
+  #photography {
+    width: 100%;
+    background-image: url(../images/desktop/image-photography.jpg);
+  }
+  #photography h2 {
+    font-size: 2.8rem;
+  }
+  #photography p {
+    margin: 0 auto;
+  }
+
+  #client-testimonials {
+    width: 100%;
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #client-testimonials h2 {
+    grid-column: 1 / 4;
+    max-width: fit-content;
+    margin: 150px auto 80px auto;
+    font-size: 2rem;
+    letter-spacing: 0.5ch;
+  }
+
+  .testimonial {
+    text-align: center;
+    margin-bottom: 5em;
+  }
+  .client-img {
+    margin: 0 auto;
+    margin-bottom: 3em;
+  }
+  .client-quote {
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    max-width: 34ch;
+  }
+  .client-name {
+    padding: 0;
+    margin: 0 auto;
+  }
+  .client-title {
+    padding: 0;
+    margin: 0.25em auto 1em auto;
+    margin-bottom: 4.8em;
+  }
+
+  .image-gallery {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-nav {
+    margin: 0 auto;
+    width: max-content;
+  }
+  .footer-nav a {
+    padding: 0 1.5em;
   }
 }
 /**************** END Desktop Styles ****************/
