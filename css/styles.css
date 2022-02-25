@@ -68,7 +68,6 @@ textarea {
   --color-secondary-medium: hsl(213, 9%, 39%);
   --color-secondary-light: hsl(232, 10%, 55%);
   --color-secondary-verylight: hsl(210, 4%, 67%);
-  --color-main-bg: rgb(255, 250, 245);
 }
 
 /**************** BEGIN Mobile Styles ****************/
@@ -276,10 +275,6 @@ main a {
   color: var(--color-primary-photography-text);
   font-size: 1.6rem;
   max-width: 37ch;
-}
-
-main {
-  background-color: var(--color-main-bg);
 }
 
 #client-testimonials h2 {
